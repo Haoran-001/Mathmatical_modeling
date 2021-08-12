@@ -2,7 +2,10 @@
 This is a series of algorithms for our mathmatical modeling.
 
 ## 数据挖掘、处理、分析
-1. 聚类算法 [代码](k_medoide.py)
+1. 聚类算法 
+    * kmeans算法
+    * kmeans++算法
+    * kmedoide算法 [代码](k_medoide.py)
 2. 主成分分析
 3. 遗传算法 [代码](gene_algorithm.py)
 4. 模拟退火算法

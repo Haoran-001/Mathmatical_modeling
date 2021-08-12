@@ -22,8 +22,8 @@ def generate_points(n: int = 100) -> list:
 
     return points
 
-# K-Medoide Algorithm
-class KMedoide:
+# K-Means Algorithm
+class KMeans:
     def __init__(self, points: list = None, groups: int = 3, times: int = 10):
         self.points = points
         self.groups = groups
@@ -40,7 +40,10 @@ class KMedoide:
 
         i = 0
         while (i < self.groups):
-            center_point = random.choice(self.points)
+            point = np.random.randint(0, 100, (1, 2))[0]
+            center_point = []
+            center_point.append(point[0])
+            center_point.append(point[1])
             if center_point not in center_points:
                 center_points.append(center_point)
                 i += 1
@@ -60,28 +63,37 @@ class KMedoide:
 
     def iterate_n_times(self) -> list:
         index = 0
-
         while index < self.times:
             for i in range(len(self.center_points)):
-                min_distances = []
-                for one_point in self.points_group[i]:
-                    min_distances.append(self.get_euclidean_distance(one_point, self.center_points[i]))
-                min_distance = sum(min_distances)
-
-                for one_point in self.points_group[i]:
-                    cur_distances = []
-                    for another_point in self.points_group[i]:
-                        cur_distances.append(self.get_euclidean_distance(one_point, another_point))
-                    cur_distance = sum(cur_distances)
-
-                    if cur_distance < min_distance:
-                        min_distance = cur_distance
-                        self.center_points[i] = one_point
-                        
+                avg_center_point = [0, 0]
+                # avg_center_point[0] = sum([x[0] for x in self.points_group[i]]) / len(self.points_group[i])
+                # avg_center_point[1] = sum([x[1] for x in self.points_group[i]]) / len(self.points_group[i])
+                for one_point_index in range(len(self.points_group[i])):
+                    avg_center_point[0] = (one_point_index) / (one_point_index + 1) * avg_center_point[0] + self.points_group[i][one_point_index][0] / (one_point_index + 1)
+                    avg_center_point[1] = (one_point_index) / (one_point_index + 1) * avg_center_point[1] + self.points_group[i][one_point_index][1] / (one_point_index + 1)
+                self.center_points[i] = avg_center_point
             index += 1
+
             self.points_group = self.generate_k_original_pointset()
 
         return self.points_group
+
+# K-Means++ Algorithm
+# 初始的点不是随机选取，而是k个点之间的间隔距离尽可能大
+class KMeansPlus(KMeans):
+    def __init__(self, points: list = None, groups: int = 3, times: int = 10):
+        KMeans.__init__(self, points, groups, times)
+        self.center_points = []
+        self.center_points.append(random.choice(self.points))
+        for i in range(1, self.groups):
+            max_distance = -1
+            for one_point in self.points:
+                temp_distance = sum([self.get_euclidean_distance(one_point, center_point) for center_point in self.center_points])
+                if temp_distance > max_distance:
+                    max_distance = temp_distance
+                    cur_point = one_point
+            self.center_points.append(cur_point)
+            print(self.center_points)
 
 def main():
     # orginal points
@@ -93,9 +105,9 @@ def main():
     plt.xlabel('x axis')
     plt.ylabel('y axis')
 
-    # current points after K-Medoide
-    kmedoide = KMedoide(points = points, groups= 4, times = 20)
-    points_group = kmedoide.iterate_n_times()
+    # current points after K-Means or K-Means++
+    kmeans = KMeansPlus(points = points, groups= 4, times = 20)
+    points_group = kmeans.iterate_n_times()
 
     # visualization
     points_group_np = np.asarray([np.asarray(point_group) for point_group in points_group])
@@ -118,12 +130,12 @@ def main():
     colors = {0: 'red', 1: 'green', 2: 'blue', 3: 'yellow'}
     plt.subplot(122)
     plt.scatter(df['x_set'], df['y_set'], c = df['category'].map(colors))
-    plt.title('points after K-Medoide algorithm')
+    plt.title('points after K-Means algorithm')
     plt.xlabel('x axis')
     plt.ylabel('y axis')
     plt.show()
 
+
+
 if __name__ == '__main__':
     main()
-
-    
