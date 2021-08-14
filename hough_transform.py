@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-original_img = cv2.imread('images/seattle.jpg', 0)
+original_img = cv2.imread('assets/seattle.jpg', 0)
 img = cv2.resize(original_img, None, fx = 0.8, fy = 0.8, interpolation = cv2.INTER_CUBIC)
 img = cv2.GaussianBlur(img, (3, 3), 0)
 edges = cv2.Canny(img, 50, 150, apertureSize = 3)

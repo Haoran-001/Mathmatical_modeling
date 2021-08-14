@@ -87,7 +87,7 @@ def Canny(img, threshold1, threshold2):
     return DT
 
 def main():
-    img = cv2.imread('images/seattle.jpg')
+    img = cv2.imread('assets/seattle.jpg')
     cv2.imshow('src', img)
     result = Canny(img, 60, 120)
     cv2.imshow('canny', result)
