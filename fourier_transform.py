@@ -4,6 +4,7 @@ import scipy.io.wavfile as wf
 import matplotlib.pyplot as plt
 import cv2
 
+# 一维傅里叶变换, 以数字音频处理为例
 def audio_fourier():
     # 读取音频文件, 获取音频文件基本信息: 采样个数、采用周期
     # 与每个采样的声音信号值, 绘制音频时域的时间/位移图像
@@ -64,6 +65,7 @@ def audio_fourier():
 
     wf.write('./assets/filter.wav', sample_rate, filter_sigs)
 
+# 二维傅里叶变换, 以数字图像处理为例
 def image_fourier():
     img = cv2.imread('./assets/shanghai.jpg', flags = 0)
 

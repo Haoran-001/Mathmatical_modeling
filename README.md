@@ -15,6 +15,6 @@ This is a series of algorithms for our mathmatical modeling.
 ## 图像处理与特征提取
 1. Canny边缘检测 [代码](canny.py)
 2. Hough变换 [代码](hough_transform.py)
-3. 傅里叶变换 
+3. 傅里叶变换 [代码](fourier_transform.py)
 4. 小波变换
 
