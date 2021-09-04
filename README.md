@@ -6,7 +6,7 @@ This is a series of algorithms for our mathmatical modeling.
     * kmeans算法 [代码](k_means.py)
     * kmeans++算法 [代码](k_means.py)
     * kmedoide算法 [代码](k_medoide.py)
-2. 主成分分析
+2. 主成分分析 [代码](pca_algorithm.py)
 3. 遗传算法 [代码](gene_algorithm.py)
 4. 模拟退火算法
 5. 随机森林算法
