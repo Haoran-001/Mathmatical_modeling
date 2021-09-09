@@ -7,11 +7,11 @@
 
 </head>
 <body>
-    <div id="f1cb4bfaecfd41b58019db421b8bcc81" class="chart-container" style="width:900px; height:500px;"></div>
+    <div id="f7ed01fe1de247b7b79da2fac0e8ba96" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_f1cb4bfaecfd41b58019db421b8bcc81 = echarts.init(
-            document.getElementById('f1cb4bfaecfd41b58019db421b8bcc81'), 'white', {renderer: 'canvas'});
-        var option_f1cb4bfaecfd41b58019db421b8bcc81 = {
+        var chart_f7ed01fe1de247b7b79da2fac0e8ba96 = echarts.init(
+            document.getElementById('f7ed01fe1de247b7b79da2fac0e8ba96'), 'white', {renderer: 'canvas'});
+        var option_f7ed01fe1de247b7b79da2fac0e8ba96 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -49,9 +49,8 @@
     "series": [
         {
             "type": "line",
-            "name": "value",
+            "name": "2 \u7684\u6307\u6570",
             "connectNulls": false,
-            "symbol": "emptyCircle",
             "symbolSize": 4,
             "showSymbol": true,
             "smooth": false,
@@ -59,32 +58,40 @@
             "step": false,
             "data": [
                 [
-                    "Mon",
-                    820
+                    "\u4e00",
+                    1
                 ],
                 [
-                    "The",
-                    932
+                    "\u4e8c",
+                    2
                 ],
                 [
-                    "Wed",
-                    901
+                    "\u4e09",
+                    4
                 ],
                 [
-                    "Thu",
-                    934
+                    "\u56db",
+                    8
                 ],
                 [
-                    "Fri",
-                    1290
+                    "\u4e94",
+                    16
                 ],
                 [
-                    "Sat",
-                    1330
+                    "\u516d",
+                    32
                 ],
                 [
-                    "Sun",
-                    1320
+                    "\u4e03",
+                    64
+                ],
+                [
+                    "\u516b",
+                    128
+                ],
+                [
+                    "\u4e5d",
+                    256
                 ]
             ],
             "hoverAnimation": true,
@@ -95,14 +102,79 @@
             },
             "lineStyle": {
                 "show": true,
-                "width": 1,
+                "width": 2,
                 "opacity": 1,
                 "curveness": 0,
                 "type": "solid"
             },
             "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "3 \u7684\u6307\u6570",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "\u4e00",
+                    1
+                ],
+                [
+                    "\u4e8c",
+                    3
+                ],
+                [
+                    "\u4e09",
+                    9
+                ],
+                [
+                    "\u56db",
+                    27
+                ],
+                [
+                    "\u4e94",
+                    81
+                ],
+                [
+                    "\u516d",
+                    247
+                ],
+                [
+                    "\u4e03",
+                    741
+                ],
+                [
+                    "\u516b",
+                    2223
+                ],
+                [
+                    "\u4e5d",
+                    6669
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 2,
                 "opacity": 1,
-                "color": "#C67570"
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
             },
             "zlevel": 0,
             "z": 0
@@ -111,10 +183,12 @@
     "legend": [
         {
             "data": [
-                "value"
+                "2 \u7684\u6307\u6570",
+                "3 \u7684\u6307\u6570"
             ],
             "selected": {
-                "value": true
+                "2 \u7684\u6307\u6570": true,
+                "3 \u7684\u6307\u6570": true
             },
             "show": true,
             "padding": 5,
@@ -142,7 +216,7 @@
     },
     "xAxis": [
         {
-            "type": "category",
+            "name": "x",
             "show": true,
             "scale": false,
             "nameLocation": "end",
@@ -151,7 +225,6 @@
             "inverse": false,
             "offset": 0,
             "splitNumber": 5,
-            "boundaryGap": false,
             "minInterval": 0,
             "splitLine": {
                 "show": false,
@@ -164,29 +237,27 @@
                 }
             },
             "data": [
-                "Mon",
-                "The",
-                "Wed",
-                "Thu",
-                "Fri",
-                "Sat",
-                "Sun"
+                "\u4e00",
+                "\u4e8c",
+                "\u4e09",
+                "\u56db",
+                "\u4e94",
+                "\u516d",
+                "\u4e03",
+                "\u516b",
+                "\u4e5d"
             ]
         }
     ],
     "yAxis": [
         {
-            "type": "value",
+            "type": "log",
+            "name": "y",
             "show": true,
-            "scale": false,
+            "scale": true,
             "nameLocation": "end",
             "nameGap": 15,
             "gridIndex": 0,
-            "axisTick": {
-                "show": true,
-                "alignWithLabel": false,
-                "inside": false
-            },
             "inverse": false,
             "offset": 0,
             "splitNumber": 5,
@@ -205,29 +276,13 @@
     ],
     "title": [
         {
+            "text": "Line-\u5bf9\u6570\u8f74\u793a\u4f8b",
             "padding": 5,
             "itemGap": 10
         }
-    ],
-    "toolbox": {
-        "show": true,
-        "trigger": "item",
-        "triggerOn": "mousemove|click",
-        "axisPointer": {
-            "type": "line"
-        },
-        "showContent": true,
-        "alwaysShowContent": false,
-        "showDelay": 0,
-        "hideDelay": 100,
-        "textStyle": {
-            "fontSize": 14
-        },
-        "borderWidth": 0,
-        "padding": 5
-    }
+    ]
 };
-        chart_f1cb4bfaecfd41b58019db421b8bcc81.setOption(option_f1cb4bfaecfd41b58019db421b8bcc81);
+        chart_f7ed01fe1de247b7b79da2fac0e8ba96.setOption(option_f7ed01fe1de247b7b79da2fac0e8ba96);
     </script>
 </body>
 </html>

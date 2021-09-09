@@ -7,11 +7,11 @@
 
 </head>
 <body>
-    <div id="f1cb4bfaecfd41b58019db421b8bcc81" class="chart-container" style="width:900px; height:500px;"></div>
+    <div id="25a5cb3871c74f46a8a8151549437880" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_f1cb4bfaecfd41b58019db421b8bcc81 = echarts.init(
-            document.getElementById('f1cb4bfaecfd41b58019db421b8bcc81'), 'white', {renderer: 'canvas'});
-        var option_f1cb4bfaecfd41b58019db421b8bcc81 = {
+        var chart_25a5cb3871c74f46a8a8151549437880 = echarts.init(
+            document.getElementById('25a5cb3871c74f46a8a8151549437880'), 'white', {renderer: 'canvas'});
+        var option_25a5cb3871c74f46a8a8151549437880 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -49,42 +49,42 @@
     "series": [
         {
             "type": "line",
-            "name": "value",
+            "name": "\u5546\u5bb6A",
             "connectNulls": false,
-            "symbol": "emptyCircle",
-            "symbolSize": 4,
+            "symbol": "triangle",
+            "symbolSize": 20,
             "showSymbol": true,
             "smooth": false,
             "clip": true,
             "step": false,
             "data": [
                 [
-                    "Mon",
-                    820
+                    "\u5c0f\u7c73",
+                    80
                 ],
                 [
-                    "The",
-                    932
+                    "\u4e09\u661f",
+                    57
                 ],
                 [
-                    "Wed",
-                    901
+                    "\u534e\u4e3a",
+                    69
                 ],
                 [
-                    "Thu",
-                    934
+                    "\u82f9\u679c",
+                    98
                 ],
                 [
-                    "Fri",
-                    1290
+                    "\u9b45\u65cf",
+                    44
                 ],
                 [
-                    "Sat",
-                    1330
+                    "VIVO",
+                    90
                 ],
                 [
-                    "Sun",
-                    1320
+                    "OPPO",
+                    111
                 ]
             ],
             "hoverAnimation": true,
@@ -95,14 +95,19 @@
             },
             "lineStyle": {
                 "show": true,
-                "width": 1,
+                "width": 4,
                 "opacity": 1,
                 "curveness": 0,
-                "type": "solid"
+                "type": "dashed",
+                "color": "green"
             },
             "areaStyle": {
-                "opacity": 1,
-                "color": "#C67570"
+                "opacity": 0
+            },
+            "itemStyle": {
+                "color": "blue",
+                "borderColor": "yellow",
+                "borderWidth": 3
             },
             "zlevel": 0,
             "z": 0
@@ -111,10 +116,10 @@
     "legend": [
         {
             "data": [
-                "value"
+                "\u5546\u5bb6A"
             ],
             "selected": {
-                "value": true
+                "\u5546\u5bb6A": true
             },
             "show": true,
             "padding": 5,
@@ -142,7 +147,6 @@
     },
     "xAxis": [
         {
-            "type": "category",
             "show": true,
             "scale": false,
             "nameLocation": "end",
@@ -151,7 +155,6 @@
             "inverse": false,
             "offset": 0,
             "splitNumber": 5,
-            "boundaryGap": false,
             "minInterval": 0,
             "splitLine": {
                 "show": false,
@@ -164,35 +167,29 @@
                 }
             },
             "data": [
-                "Mon",
-                "The",
-                "Wed",
-                "Thu",
-                "Fri",
-                "Sat",
-                "Sun"
+                "\u5c0f\u7c73",
+                "\u4e09\u661f",
+                "\u534e\u4e3a",
+                "\u82f9\u679c",
+                "\u9b45\u65cf",
+                "VIVO",
+                "OPPO"
             ]
         }
     ],
     "yAxis": [
         {
-            "type": "value",
             "show": true,
             "scale": false,
             "nameLocation": "end",
             "nameGap": 15,
             "gridIndex": 0,
-            "axisTick": {
-                "show": true,
-                "alignWithLabel": false,
-                "inside": false
-            },
             "inverse": false,
             "offset": 0,
             "splitNumber": 5,
             "minInterval": 0,
             "splitLine": {
-                "show": true,
+                "show": false,
                 "lineStyle": {
                     "show": true,
                     "width": 1,
@@ -205,29 +202,13 @@
     ],
     "title": [
         {
+            "text": "Line-ItemStyle",
             "padding": 5,
             "itemGap": 10
         }
-    ],
-    "toolbox": {
-        "show": true,
-        "trigger": "item",
-        "triggerOn": "mousemove|click",
-        "axisPointer": {
-            "type": "line"
-        },
-        "showContent": true,
-        "alwaysShowContent": false,
-        "showDelay": 0,
-        "hideDelay": 100,
-        "textStyle": {
-            "fontSize": 14
-        },
-        "borderWidth": 0,
-        "padding": 5
-    }
+    ]
 };
-        chart_f1cb4bfaecfd41b58019db421b8bcc81.setOption(option_f1cb4bfaecfd41b58019db421b8bcc81);
+        chart_25a5cb3871c74f46a8a8151549437880.setOption(option_25a5cb3871c74f46a8a8151549437880);
     </script>
 </body>
 </html>
